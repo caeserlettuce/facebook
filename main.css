@@ -1,0 +1,119 @@
+ 
+:root {
+  --main-bg: #1e1e1e;
+  --main-txt: #ffffff;
+  --header-bg: #272727;
+  --scrollbar-bg: #ffffff;
+  --a-txt: #ffffff;
+  --divider-bg: #3b3b3b;
+  --input-bg: #313131;
+}
+
+
+
+.push { /* pushes flexbox child to the right */
+  margin-left: auto !important;
+}
+
+/* custom styles for default elements */
+h1, h2, h3, h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal !important;
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+}
+
+a, a:visited {
+  color: var(--a-txt);
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--main-txt);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  overflow: overlay;
+  overflow-x: scroll;
+  /*overflow-y: scroll;*/
+  cursor: default;
+  width: 100vw;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-bg);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.divider {
+  border-top: 1px solid var(--divider-bg);
+  width: 100vw;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+h1 {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h2.sectionheader {
+  font-size: 1.75em;
+  margin-top: 0px;
+}
+
+.funny {
+  position: relative;
+  height: 30em;
+  max-width: min-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.funny img {
+  height: inherit;
+}
+
+.funny .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.funny h2 {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  font-size: 1.75em;
+  text-wrap: wrap;
+}
+
+input {
+  color: var(--main-txt);
+  background-color: var(--input-bg);
+  border: 1px solid var(--divider-bg);
+  padding: 5px;
+  font-size: 1.5em;
+}
