@@ -1,6 +1,16 @@
 var stuff = {
   "backgrounds": [
-    "assets/crylaugh.png"
+    "assets/smiley.png",
+    "assets/crylaugh.png",
+    "assets/hearteyes.png",
+    "assets/fire.png",
+    "assets/hearts.png",
+    "assets/roses.png",
+    "assets/poop.png",
+    "assets/stairs.png",
+    "assets/rubberroom.png",
+    "assets/tubefunny.png",
+    "assets/blueandgreen.png"
   ]
 }
 
@@ -14,21 +24,21 @@ for (i in stuff["backgrounds"]) {
   document.querySelector(".background-choose").appendChild(node);
 }
 
-function on_text_change() {
+var update_interval = setInterval( () => {
   document.querySelector(".funny h2").innerHTML = document.querySelector("input.inputtext").value;
-  
-}
+  document.querySelector(".funny h2").style.color = document.querySelector(`input[type="color"]`).value
+  document.querySelector(".funny h2").style.fontSize = ( parseInt(document.querySelector(`input[type="range"]`).value) * 2 )
+
+}, 25);
 
 function change_background(id) {
   document.querySelector(".funny img").setAttribute("src", `${stuff["backgrounds"][id]}`);
 }
 
-
-function download_image()
-{
-    var c = document.querySelector('.funny');
-    var t = c.getContext('2d');
-    window.location.href = image;
-
-    window.open('', document.querySelector('.funny').toDataURL());
+function download_image() {
+  html2canvas(document.querySelector(".funny")).then(canvas => {
+    canvas.toBlob(function(blob) { 
+      saveAs(blob, "facebook.png");
+    });
+  });
 }

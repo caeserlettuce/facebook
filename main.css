@@ -7,6 +7,7 @@
   --a-txt: #ffffff;
   --divider-bg: #3b3b3b;
   --input-bg: #313131;
+  --accent: #0066ff;
 }
 
 
@@ -76,13 +77,14 @@ h1 {
 
 h2.sectionheader {
   font-size: 1.75em;
-  margin-top: 0px;
+  margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 
 .funny {
   position: relative;
   width: 45em;
+  max-height: calc(45em * 0.69444444444);
   max-width: 80vw;
   margin-left: auto;
   margin-right: auto;
@@ -112,12 +114,46 @@ h2.sectionheader {
   text-wrap: wrap;
 }
 
+.inputs {
+  display: flex;
+  max-width: 90vw;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 input {
   color: var(--main-txt);
   background-color: var(--input-bg);
   border: 1px solid var(--divider-bg);
   padding: 5px;
   font-size: 1.5em;
+}
+
+input[type="color"] {
+  height: 1.5em;
+}
+
+.slider {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+}
+
+.slider::-webkit-slider-runnable-track {
+  background-color: var(--input-bg);
+  border-radius: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--main-txt);
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
 }
 
 .background-choose {

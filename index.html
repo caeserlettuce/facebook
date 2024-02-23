@@ -17,14 +17,20 @@
     </div>
 
     <div class="divider"></div>
+    <div class="inputs">
+      <input type="text" class="inputtext" placeholder="text">
+      <input type="color">
+      <input type="range" class="slider" min="0" max="100" value="50">
+    </div>
+    
     <h2 class="sectionheader">backgrounds</h2>
     <div class="background-choose">
       <img class="template bg-choose" src="assets/.png" onclick="change_background(0)">
     </div>
 
-    <div class="divider"></div>
-    <input type="text" class="inputtext" placeholder="text" onkeyup="on_text_change()" onkeydown="on_text_change()">
     <br>
+    <script src="FileSaver.js"></script>
+    <script src="html2canvas.min.js"></script>
     <script src="main.js"></script>
   </body>
 </html>
