@@ -35,8 +35,8 @@ body {
   padding: 0px;
   margin: 0px;
   border: 0px;
-  overflow: overlay;
-  overflow-x: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   /*overflow-y: scroll;*/
   cursor: default;
   width: 100vw;
@@ -65,7 +65,7 @@ body {
 .divider {
   border-top: 1px solid var(--divider-bg);
   width: 100vw;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 
@@ -77,18 +77,20 @@ h1 {
 h2.sectionheader {
   font-size: 1.75em;
   margin-top: 0px;
+  margin-bottom: 0.5em;
 }
 
 .funny {
   position: relative;
-  height: 30em;
-  max-width: min-content;
+  width: 45em;
+  max-width: 80vw;
   margin-left: auto;
   margin-right: auto;
 }
 
 .funny img {
-  height: inherit;
+  width: inherit;
+  max-width: 80vw;
 }
 
 .funny .text {
@@ -116,4 +118,24 @@ input {
   border: 1px solid var(--divider-bg);
   padding: 5px;
   font-size: 1.5em;
+}
+
+.background-choose {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 10px;
+}
+
+.bg-choose {
+  width: 17.5em;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.template {
+  display: none;
 }
