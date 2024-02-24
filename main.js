@@ -11,7 +11,12 @@ var stuff = {
     "assets/rubberroom.png",
     "assets/tubefunny.png",
     "assets/blueandgreen.png"
-  ]
+  ],
+  "settings": {
+    "text": "hello world",
+    "colour": "#ffffff",
+    "size": 50
+  }
 }
 
 
@@ -25,9 +30,20 @@ for (i in stuff["backgrounds"]) {
 }
 
 var update_interval = setInterval( () => {
-  document.querySelector(".funny h2").innerHTML = document.querySelector("input.inputtext").value;
-  document.querySelector(".funny h2").style.color = document.querySelector(`input[type="color"]`).value
-  document.querySelector(".funny h2").style.fontSize = ( parseInt(document.querySelector(`input[type="range"]`).value) * 2 )
+
+  stuff["settings"]["text"] = document.querySelector("input.inputtext").value;
+  stuff["settings"]["colour"] = document.querySelector(`input[type="color"]`).value;
+  stuff["settings"]["size"] = `calc( 1.75em * ${parseInt(document.querySelector(`input[type="range"]`).value) / 50})`;
+
+  if ( document.querySelector(".funny h2").innerHTML != stuff["settings"]["text"] ) {
+    document.querySelector(".funny h2").innerHTML = stuff["settings"]["text"];
+  }
+  if ( document.querySelector(".funny h2").style.color != stuff["settings"]["colour"] ) {
+    document.querySelector(".funny h2").style.color = stuff["settings"]["colour"];
+  }
+  if ( document.querySelector(".funny h2").style.fontSize != stuff["settings"]["size"] ) {
+    document.querySelector(".funny h2").style.fontSize = stuff["settings"]["size"];
+  }
 
 }, 25);
 
